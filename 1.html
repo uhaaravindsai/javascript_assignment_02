@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Formatter</title>
+</head>
+<body>
+  <h2>Currency Formatter</h2>
+  <p id="usd"></p>
+  <p id="eur"></p>
+  <p id="inr"></p>
+  <script>
+    function formatCurrency(amount, currencyCode) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: currencyCode,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(amount);
+    }
+    document.getElementById('usd').textContent = formatCurrency(123.4, 'USD');
+    document.getElementById('eur').textContent = formatCurrency(123.4, 'EUR');
+    document.getElementById('inr').textContent = formatCurrency(123.4, 'INR');
+  </script>
+</body>
+</html>
