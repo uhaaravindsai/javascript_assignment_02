@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#counter { font-size: 2em; margin: 10px; }
+button { padding: 10px 20px; margin: 5px; font-size: 1em; }
+</style>
+</head>
+<body>
+<div id="counter">0</div>
+<button onclick="update(1)">Increment</button>
+<button onclick="update(-1)">Decrement</button>
+<script>
+let count = 0;
+const display = document.getElementById("counter");
+function update(val) {
+  count = Math.max(0, count + val);
+  display.textContent = count;
+}
+</script>
+</body>
+</html>
